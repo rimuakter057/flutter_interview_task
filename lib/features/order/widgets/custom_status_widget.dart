@@ -2,10 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_interview_task/features/order/widgets/trailling_container.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 
 import '../../../core/constants/colors.dart';
 import '../../../core/constants/text_style.dart';
+import '../../../routes/app_routes.dart';
 
 class CustomStatusItem extends StatelessWidget {
   final String imageUrl;
@@ -14,7 +16,7 @@ class CustomStatusItem extends StatelessWidget {
   final String fourthLineText;
   final String statusText;
   final Color statusColor;
-  final VoidCallback? onTap;
+
 
   const CustomStatusItem({
     super.key,
@@ -24,13 +26,15 @@ class CustomStatusItem extends StatelessWidget {
     required this.fourthLineText,
     required this.statusText,
     required this.statusColor,
-    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+
+        context.push(AppRoutes.trackingProcess);
+      },
       child: Container(
 
         decoration: BoxDecoration(

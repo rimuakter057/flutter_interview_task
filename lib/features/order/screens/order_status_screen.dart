@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_interview_task/core/widgets/custom_profile.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import '../../../core/constants/colors.dart';
+import '../../../routes/app_routes.dart';
 import '../logic/order_provider.dart';
 import '../widgets/custom_status_widget.dart';
 
@@ -60,20 +62,13 @@ class OrderStatusScreen extends ConsumerWidget {
                           statusOptions[index % statusOptions.length];
 
                       return CustomStatusItem(
-                        imageUrl: order.image,
-                        firstLineText: order.title,
-                        secondLineText: 'Order #${order.id}',
-                        fourthLineText: statusText,
-                        statusText: "track",
-                        statusColor: statusColors[statusText]!,
-                        onTap: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text('Tapped on Order #${order.id}'),
-                            ),
-                          );
-                        },
-                      );
+                         imageUrl: order.image,
+                         firstLineText: order.title,
+                         secondLineText: 'Order #${order.id}',
+                         fourthLineText: statusText,
+                         statusText: "track",
+                         statusColor: statusColors[statusText]!,
+                       );
                     },
                   );
                 },

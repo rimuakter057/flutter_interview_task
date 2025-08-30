@@ -1,8 +1,10 @@
 import 'package:flutter_interview_task/features/order/screens/order_status_screen.dart';
+import 'package:flutter_interview_task/features/order/screens/tracking_proccess_screen.dart';
 import 'package:go_router/go_router.dart';
 
 import '../features/delivery/screens/delivery_screen.dart';
 import '../features/nav_bar/bottom_nav_bar.dart';
+import '../features/order/screens/order_finish_screen.dart';
 import '../features/order/screens/order_history_screen.dart';
 
 import '../features/profile/screens/create_profile_screen.dart';
@@ -13,6 +15,8 @@ class AppRoutes {
   static const String delivery = '/delivery';
   static const String orders = '/orders';
   static const String orderStatus = '/order-status';
+  static const String orderFinish = '/order-finish';
+  static const String trackingProcess = '/tracking-process';
   static const String setting = '/setting';
   static const String profile = '/profile';
   static const String createProfile = '/create-profile'; // standalone route
@@ -76,6 +80,14 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: AppRoutes.createProfile,
       builder: (context, state) => const CreateProfileScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.trackingProcess,
+      builder: (context, state) => const TrackingProcessScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.orderFinish,
+      builder: (context, state) => const OrderFinishScreen(),
     ),
   ],
 );
