@@ -18,16 +18,25 @@ class OrderStatusScreen extends ConsumerWidget {
       body: SafeArea(
         child: Column(
           children: [
+            SizedBox(height: 10.h,),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-              child: CustomProfile(
-                profileImage: "assets/images/profile.jpg",
-                name: "Rimu",
-                membershipStatus: "my orders",
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  IconButton(onPressed: (){
+                    print(("back"));
+                  }, icon: Icon(Icons.arrow_back_ios)),
+                  SizedBox(height: 5.h,),
+                  CustomProfile(
+                     profileImage: "assets/images/profile.jpg",
+                     name: "Rimu",
+                     membershipStatus: "my orders",
+                   ),
+                ],
               ),
             ),
 
-            // লিস্টভিউ
             Expanded(
               child: ordersAsync.when(
                 data: (orders) {

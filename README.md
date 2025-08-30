@@ -14,7 +14,7 @@
 <p float="left">
   <img src="assets/screenshots/profile.jpeg" width="180"/>
   <img src="assets/screenshots/setting.jpeg" width="180"/>
-  <img src="assets/screenshots/status.jpeg" width="180"/>
+  <img src="assets/screenshots/status.jfif" width="180"/>
 </p>
 
 ---
