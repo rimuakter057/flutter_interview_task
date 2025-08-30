@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_interview_task/core/widgets/custom_button.dart';
 import 'package:flutter_interview_task/core/widgets/custom_profile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-
 import '../../../core/constants/colors.dart';
-
-
+import '../widgets/bottom_widget.dart';
 import '../widgets/stepper.dart';
 import '../widgets/tracking_step.dart';
-import '../widgets/tracking_time_line.dart';
-import '../widgets/trailling_container.dart';
+import '../widgets/trailing_container.dart';
 
 class OrderFinishScreen extends StatelessWidget {
   const OrderFinishScreen({super.key});
@@ -18,20 +13,22 @@ class OrderFinishScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 10.h,),
+            SizedBox(height: 30.h),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                IconButton(onPressed: (){
-                  print(("back"));
-                }, icon: Icon(Icons.arrow_back_ios)),
-                SizedBox(height: 8.h,),
+                IconButton(
+                  onPressed: () {
+                    print(("back"));
+                  },
+                  icon: Icon(Icons.arrow_back_ios),
+                ),
+                SizedBox(height: 5.h),
                 CustomProfile(
                   profileImage: "assets/images/profile.jpg",
                   name: "Rimu",
@@ -41,7 +38,7 @@ class OrderFinishScreen extends StatelessWidget {
             ),
             SizedBox(height: 5.h),
             SimpleStepper(),
-         //   TrackingTimeline(currentStep: 1, totalSteps: 2,),
+            //   TrackingTimeline(currentStep: 1, totalSteps: 2,),
             SizedBox(height: 10.h),
             Container(
               padding: EdgeInsets.all(10.sp),
@@ -51,10 +48,7 @@ class OrderFinishScreen extends StatelessWidget {
                 children: [
                   Text(
                     'Tracking Number',
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      color: Colors.grey[600],
-                    ),
+                    style: TextStyle(fontSize: 14.sp, color: Colors.grey[600]),
                   ),
                   SizedBox(height: 5.h),
                   Row(
@@ -67,11 +61,7 @@ class OrderFinishScreen extends StatelessWidget {
                         ),
                       ),
                       const Spacer(),
-                      Icon(
-                        Icons.content_copy,
-                        size: 20.sp,
-                        color: Colors.grey,
-                      ),
+                      Icon(Icons.content_copy, size: 20.sp, color: Colors.grey),
                     ],
                   ),
                 ],
@@ -82,21 +72,21 @@ class OrderFinishScreen extends StatelessWidget {
               title: 'Packed',
               date: 'Aug 29, 2025',
               description:
-              'Your parcel is packed and will be handed over to our delivery partners.',
+                  'Your parcel is packed and will be handed over to our delivery partners.',
               isCompleted: true,
             ),
             TrackingStep(
               title: 'On The Way to Logistic Facility',
               date: 'Aug 30, 2025',
               description:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut labore.',
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut labore.',
               isCompleted: true,
             ),
             TrackingStep(
               title: 'Arrived at Logistic Facility',
               date: 'Aug 31, 2025',
               description:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut labore.',
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut labore.',
               isCompleted: true,
             ),
             Row(
@@ -120,64 +110,21 @@ class OrderFinishScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-      GestureDetector(
-        onTap: () {
-          showModalBottomSheet(
-            context: context,
-            backgroundColor: Colors.transparent,
-            builder: (context) {
-              return Container(
-                height: 300,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                   children: [
-                     Text(
-                       "Delivery was not successful",
-                       style: TextStyle(
-                         fontSize: 18.sp,
-                         fontWeight: FontWeight.w600,
-                         color: AppColors.primaryText,
-                       ),
-                     ),
-                     SizedBox(height: 10.h,),
-                     Text(
-                       "What Should I do?",
-                       style: TextStyle(
-                         fontSize: 14.sp,
-                         fontWeight: FontWeight.w600,
-                         color: AppColors.primaryText,
-                       ),
-                     ),
-                     SizedBox(height: 5.h,),
-                     Text(
-                       maxLines: 4,
-                       "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet ",
-                       style: TextStyle(
-                         fontSize: 14.sp,
-                         fontWeight: FontWeight.w500,
-                         color: AppColors.primaryText,
-                       ),
-                     ),
-                     SizedBox(height: 10.h,),
-                     CustomButton(text: "click here", onPressed: (){})
-                   ],
-                  ),
-                ),
-              );
-            },
-          );
-        },
-        child: TrailingStatusContainer(
-          statusText: 'bot_s',
-          backgroundColor: AppColors.primary,
-        ),
-      ),
+                          GestureDetector(
+                            onTap: () {
+                              showModalBottomSheet(
+                                context: context,
+                                backgroundColor: Colors.transparent,
+                                builder: (context) {
+                                  return BottomWidget();
+                                },
+                              );
+                            },
+                            child: TrailingStatusContainer(
+                              statusText: 'bot_s',
+                              backgroundColor: AppColors.primary,
+                            ),
+                          ),
                         ],
                       ),
                       SizedBox(height: 5.h),

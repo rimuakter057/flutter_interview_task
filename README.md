@@ -15,6 +15,13 @@
   <img src="assets/screenshots/profile.jpeg" width="180"/>
   <img src="assets/screenshots/setting.jpeg" width="180"/>
   <img src="assets/screenshots/status.jfif" width="180"/>
+  <img src="assets/screenshots/process.jfif" width="180"/>
+</p>
+
+### 🔹 Row 3
+<p float="left">
+  <img src="assets/screenshots/finish.jfif" width="180"/>
+  <img src="assets/screenshots/faild.jfif" width="180"/>
 </p>
 
 ---
