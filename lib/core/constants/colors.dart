@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  // Use hex codes for better readability and precision
-  // Example: 0xFF is the alpha (opacity) value, FF means 100% opaque.
-  // F5F5F5 is the RGB hex value.
+
   static const Color primaryText = Color(0xFF1E1E1E);
   static const Color secondaryText = Color(0xFF6B6B6B);
   static const Color accentColor = Color(0xFFFF9800);
@@ -17,7 +15,7 @@ class AppColors {
   static const Color profileHeaderBg = Color(0xFFFFF8E1); // A light, warm background for the profile header area
 
   // Primary & Accent Colors
-  static const Color primary = Color(0xFF42A5F5);
+  static const Color primary = Color(0xFFFF9800);
   static const Color accent = Color(0xFFFF9800);
 
 

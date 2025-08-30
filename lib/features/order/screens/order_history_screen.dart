@@ -18,7 +18,7 @@ class OrderHistoryScreen extends ConsumerWidget {
       body: SafeArea(
         child: Column(
           children: [
-            // কাস্টম টপ বার
+
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
               child: Row(
@@ -42,14 +42,12 @@ class OrderHistoryScreen extends ConsumerWidget {
                     itemBuilder: (context, index) {
                       final order = orders[index];
 
-                      // স্ট্যাটাসের রঙের জন্য Map (ডেমো হিসেবে)
                       final Map<String, Color> statusColors = {
                         'Delivered': AppColors.success,
                         'Shipped': AppColors.info,
                         'Processing': AppColors.accent,
                       };
 
-                      // Randomly assign status for demo
                       final List<String> statusOptions = ['Delivered', 'Shipped', 'Processing'];
                       final statusText = statusOptions[index % statusOptions.length];
 
@@ -59,8 +57,7 @@ class OrderHistoryScreen extends ConsumerWidget {
                         secondLineText: 'Order #${order.id}',
                         thirdLineText: 'Placed on 2023-08-${10 - index}', // dummy date
                         fourthLineText: 'Status:',
-                        statusText: statusText,
-                        statusColor: statusColors[statusText]!,
+
                         onTap: () {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(content: Text('Tapped on Order #${order.id}')),

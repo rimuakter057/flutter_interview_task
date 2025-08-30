@@ -8,24 +8,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/constants/colors.dart';
 import '../../../core/constants/text_style.dart';
 
-class CustomProductItem extends StatelessWidget {
+class CustomStatusItem extends StatelessWidget {
   final String imageUrl;
   final String firstLineText;
   final String secondLineText;
-  final String thirdLineText;
   final String fourthLineText;
-
+  final String statusText;
+  final Color statusColor;
   final VoidCallback? onTap;
 
-  const CustomProductItem({
+  const CustomStatusItem({
     super.key,
     required this.imageUrl,
     required this.firstLineText,
     required this.secondLineText,
-    required this.thirdLineText,
     required this.fourthLineText,
-
-
+    required this.statusText,
+    required this.statusColor,
     this.onTap,
   });
 
@@ -48,11 +47,11 @@ class CustomProductItem extends StatelessWidget {
         ),
         child: Padding(
           padding: EdgeInsets.all(12.w),
-          child: IntrinsicHeight( // এটি ভেতরের সব child-কে একই উচ্চতা দেবে
+          child: IntrinsicHeight(
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.stretch, // child-কে উল্লম্বভাবে প্রসারিত করবে
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                // Product Image - ছবির উচ্চতা কলামের উচ্চতার সমান হবে
+
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8.r),
                   child: Image.network(
@@ -67,26 +66,30 @@ class CustomProductItem extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 12.w),
-                // Product Details Column - ছবির পাশের অংশ
+
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        firstLineText,
-                        style: AppTextStyles.bodyText1.copyWith(fontWeight: FontWeight.w600),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              firstLineText,
+                              style: AppTextStyles.bodyText1.copyWith(fontWeight: FontWeight.w400,fontSize: 18),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          Text(
+                           "second text",
+                            style: AppTextStyles.bodyText2.copyWith(fontSize: 15),
+                          ),
+                        ],
                       ),
                       SizedBox(height: 4.h),
                       Text(
                         secondLineText,
                         style: AppTextStyles.bodyText2,
-                      ),
-                      SizedBox(height: 4.h),
-                      Text(
-                        thirdLineText,
-                        style: AppTextStyles.bodyText2.copyWith(color: AppColors.secondaryText),
                       ),
                       SizedBox(height: 8.h),
                       Row(
@@ -94,25 +97,12 @@ class CustomProductItem extends StatelessWidget {
                         children: [
                           Text(
                             fourthLineText,
-                            style: AppTextStyles.bodyText2.copyWith(color: AppColors.secondaryText),
+                            style: AppTextStyles.bodyText2.copyWith(color: AppColors.primaryText,fontWeight: FontWeight.bold),
                           ),
-                     Container(
-                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-          decoration: BoxDecoration(
-            color: Colors.transparent, // ব্যাকগ্রাউন্ড থাকবে না
-            borderRadius: BorderRadius.circular(4.r),
-            border: Border.all(
-              color: AppColors.primary, // বর্ডার কালার primary
-              width: 1.5,
-            ),
-          ),
-          child: Text(
-            "delivery",
-            style: AppTextStyles.bodyText2.copyWith(
-              color: AppColors.primary, // টেক্সট কালারও primary
-            ),
-          ),
-        ),
+                          TrailingStatusContainer(
+                            statusText: statusText,
+                            backgroundColor: statusColor,
+                          ),
                         ],
                       ),
                     ],

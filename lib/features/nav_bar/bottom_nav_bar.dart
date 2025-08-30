@@ -29,12 +29,16 @@ class ScaffoldWithNavBar extends StatelessWidget {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag_outlined),
-            label: 'Orders',
+            icon: Icon(Icons.drive_eta),
+            label: 'status',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border),
-            label: 'Favorites',
+            icon: Icon(Icons.shopping_bag_outlined),
+            label: 'history',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Setting',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),
