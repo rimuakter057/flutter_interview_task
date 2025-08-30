@@ -18,22 +18,27 @@ class OrderHistoryScreen extends ConsumerWidget {
       body: SafeArea(
         child: Column(
           children: [
-
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
               child: Row(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.arrow_back_ios, color: AppColors.primaryText, size: 20.sp),
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      color: AppColors.primaryText,
+                      size: 20.sp,
+                    ),
                     onPressed: () => Navigator.of(context).pop(),
                   ),
                   SizedBox(width: 8.w),
-                  Text('Order History', style: AppTextStyles.appBarTitle.copyWith(fontSize: 20.sp)),
+                  Text(
+                    'Order History',
+                    style: AppTextStyles.appBarTitle.copyWith(fontSize: 20.sp),
+                  ),
                 ],
               ),
             ),
 
-            // লিস্টভিউ
             Expanded(
               child: ordersAsync.when(
                 data: (orders) {
@@ -42,25 +47,19 @@ class OrderHistoryScreen extends ConsumerWidget {
                     itemBuilder: (context, index) {
                       final order = orders[index];
 
-                      final Map<String, Color> statusColors = {
-                        'Delivered': AppColors.success,
-                        'Shipped': AppColors.info,
-                        'Processing': AppColors.accent,
-                      };
-
-                      final List<String> statusOptions = ['Delivered', 'Shipped', 'Processing'];
-                      final statusText = statusOptions[index % statusOptions.length];
-
                       return CustomProductItem(
                         imageUrl: order.image,
                         firstLineText: order.title,
                         secondLineText: 'Order #${order.id}',
-                        thirdLineText: 'Placed on 2023-08-${10 - index}', // dummy date
+                        thirdLineText:
+                            'Placed on 2023-08-${10 - index}', // dummy date
                         fourthLineText: 'Status:',
 
                         onTap: () {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text('Tapped on Order #${order.id}')),
+                            SnackBar(
+                              content: Text('Tapped on Order #${order.id}'),
+                            ),
                           );
                         },
                       );

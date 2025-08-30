@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_interview_task/core/constants/colors.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../widgets/language_selection_list.dart';
 
 class SettingScreen extends StatefulWidget {
-  const SettingScreen({Key? key}) : super(key: key);
+  const SettingScreen({super.key});
 
   @override
   State<SettingScreen> createState() => _SettingScreenState();
@@ -18,7 +18,6 @@ class _SettingScreenState extends State<SettingScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
@@ -26,10 +25,16 @@ class _SettingScreenState extends State<SettingScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 100.h,),
-                  Text("Setting",style: TextStyle(fontSize: 20.sp,color: Colors.black,fontWeight: FontWeight.bold
-                  ),),
-                  SizedBox(height:5.h,),
+                  SizedBox(height: 100.h),
+                  Text(
+                    "Setting",
+                    style: TextStyle(
+                      fontSize: 20.sp,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 5.h),
                   LanguageSelectionList(
                     languages: ['English', 'Français', 'Pусский', 'Tiếng Việt'],
                     initialSelectedLanguage: _currentLanguage,
@@ -45,8 +50,6 @@ class _SettingScreenState extends State<SettingScreen> {
                       );
                     },
                   ),
-      
-      
                 ],
               ),
             ),

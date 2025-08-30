@@ -1,4 +1,3 @@
-// lib/widgets/custom_product_item.dart
 
 import 'package:flutter/material.dart';
 import 'package:flutter_interview_task/features/order/widgets/trailling_container.dart';
@@ -50,8 +49,8 @@ class CustomStatusItem extends StatelessWidget {
                   child: Image.network(
                     imageUrl,
                     width: 120.w,
-                    height: 100.h, // Fixed height
-                    fit: BoxFit.contain,// উচ্চতা যত বড় হোক, ছবিটি মানিয়ে নেবে
+                    height: 100.h,
+                    fit: BoxFit.contain,
                     errorBuilder: (context, error, stackTrace) => Container(
                       width: 100.w,
                       color: AppColors.cardBackground,

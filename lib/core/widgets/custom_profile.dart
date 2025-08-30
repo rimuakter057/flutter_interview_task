@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../routes/app_routes.dart';
+import '../../routes/app_routes.dart';
 
 class CustomProfile extends StatelessWidget {
   final String profileImage;

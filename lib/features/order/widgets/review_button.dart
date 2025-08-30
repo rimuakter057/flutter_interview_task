@@ -1,8 +1,5 @@
-// lib/widgets/review_button.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 
 import '../../../core/constants/colors.dart';
 import '../../../core/constants/text_style.dart';
@@ -10,10 +7,7 @@ import '../../../core/constants/text_style.dart';
 class ReviewButton extends StatelessWidget {
   final VoidCallback onPressed;
 
-  const ReviewButton({
-    Key? key,
-    required this.onPressed,
-  }) : super(key: key);
+  const ReviewButton({super.key, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +24,9 @@ class ReviewButton extends StatelessWidget {
       ),
       child: Text(
         'Review',
-        style: AppTextStyles.buttonText.copyWith(fontSize: 14.sp), // Smaller font size
+        style: AppTextStyles.buttonText.copyWith(
+          fontSize: 14.sp,
+        ), // Smaller font size
       ),
     );
   }

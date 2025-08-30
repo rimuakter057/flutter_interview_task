@@ -1,16 +1,40 @@
-# flutter_interview_task
+# Interview_Task App 📖
 
-A new Flutter project.
+## 🖼 App Screenshots
 
-## Getting Started
+### 🔹 Row 1
+<p float="left">
+  <img src="assets/screenshots/profile.jpeg" width="180"/>
+  <img src="assets/screenshots/create_account.jpeg" width="180"/>
+  <img src="assets/screenshots/create_account_1.jpeg" width="180"/>
+  <img src="assets/screenshots/history.jpeg" width="180"/>
+</p>
 
-This project is a starting point for a Flutter application.
+### 🔹 Row 2
+<p float="left">
+  <img src="assets/screenshots/profile.jpeg" width="180"/>
+  <img src="assets/screenshots/setting.jpeg" width="180"/>
+  <img src="assets/screenshots/status.jpeg" width="180"/>
+</p>
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🛠️ Technologies Used
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This app is built with the following technologies:
+
+- 🔹 **Flutter** (UI development)
+- 🔹 **Dart** (Programming Language)
+- 🔹 **Riverpod** (State Management)
+- 🔹 **Go Router** (Navigation)
+- 🔹 **Responsive UI** (Supports multiple screen sizes)
+- 🔹 **Reusable UI Components** (Modular UI elements for consistency)
+- 🔹 **REST API / HTTP Requests** (Fetches data from backend services)
+
+## 🛠️ Package Used
+http: ^1.5.0
+flutter_screenutil: ^5.9.3
+go_router: ^16.2.1
+flutter_riverpod: ^2.6.1
+---
+

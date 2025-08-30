@@ -1,18 +1,13 @@
-
-
 import 'package:flutter/material.dart';
-import 'package:flutter_interview_task/routes/app_routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-
-
 import '../../../core/constants/colors.dart';
 import '../../../core/constants/text_style.dart';
 import '../../../core/widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
 
 class CreateProfileScreen extends StatelessWidget {
-  const CreateProfileScreen({Key? key}) : super(key: key);
+  const CreateProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +19,14 @@ class CreateProfileScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(
             children: [
-              SizedBox(height: 30.h),
+              SizedBox(height: 60.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
           IconButton(onPressed: (){
         context.pop();
         }, icon: Icon(Icons.arrow_back_ios),),
-                  Text('My Profile', style: AppTextStyles.appBarTitle),
+                  Text('My Profile', style: AppTextStyles.appBarTitle.copyWith(fontSize: 25.sp)),
                   SizedBox(),
                 ],
               ),
