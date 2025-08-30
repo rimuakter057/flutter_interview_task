@@ -40,11 +40,13 @@ This app is built with the following technologies:
 - 🔹 **REST API / HTTP Requests** (Fetches data from backend services)
 
 ## 🛠️ Package Used
-http: ^1.5.0
-flutter_screenutil: ^5.9.3
-go_router: ^16.2.1
-flutter_riverpod: ^2.6.1
-
+  cupertino_icons: ^1.0.8
+  http: ^1.5.0
+  flutter_screenutil: ^5.9.3
+  shared_preferences: ^2.5.3
+  go_router: ^16.2.1
+  flutter_riverpod: ^2.6.1
+  timelines_plus: ^1.0.7
 ## 🛠️ Structure
 lib/
 │
