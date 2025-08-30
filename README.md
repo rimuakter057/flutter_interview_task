@@ -8,16 +8,18 @@
   <img src="assets/screenshots/create_account.jpeg" width="200"/>
   <img src="assets/screenshots/create_account_1.jpeg" width="200"/>
   <img src="assets/screenshots/history.jpeg" width="200"/>
-    <img src="assets/screenshots/finish.jfif" width="200"/>
 </p>
-
 ### 🔹 Row 2
 <p float="left">
-   <img src="assets/screenshots/faild.jfif" width="200"/>
   <img src="assets/screenshots/profile.jpeg" width="200"/>
   <img src="assets/screenshots/setting.jpeg" width="200"/>
   <img src="assets/screenshots/status.jfif" width="200"/>
   <img src="assets/screenshots/process.jfif" width="200"/>
+</p>
+### 🔹 Row 2
+<p float="left">
+     <img src="assets/screenshots/finish.jfif" width="200"/>
+     <img src="assets/screenshots/faild.jfif" width="200"/>
 </p>
 
 ---
