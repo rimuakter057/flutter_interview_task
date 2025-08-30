@@ -33,20 +33,13 @@ class CustomStatusItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 8.h),
+
         decoration: BoxDecoration(
-          color: AppColors.cardBackground,
-          borderRadius: BorderRadius.circular(10.r),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.05),
-              blurRadius: 5.w,
-              offset: Offset(0, 2.w),
-            ),
-          ],
+          color: Colors.transparent,
+
         ),
         child: Padding(
-          padding: EdgeInsets.all(12.w),
+          padding: EdgeInsets.all(10.w),
           child: IntrinsicHeight(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -56,8 +49,9 @@ class CustomStatusItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8.r),
                   child: Image.network(
                     imageUrl,
-                    width: 100.w, // ছবির প্রস্থ নির্দিষ্ট রাখা হয়েছে
-                    fit: BoxFit.contain, // উচ্চতা যত বড় হোক, ছবিটি মানিয়ে নেবে
+                    width: 120.w,
+                    height: 100.h, // Fixed height
+                    fit: BoxFit.contain,// উচ্চতা যত বড় হোক, ছবিটি মানিয়ে নেবে
                     errorBuilder: (context, error, stackTrace) => Container(
                       width: 100.w,
                       color: AppColors.cardBackground,
@@ -65,7 +59,7 @@ class CustomStatusItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: 12.w),
+                SizedBox(width: 10.w),
 
                 Expanded(
                   child: Column(
@@ -76,7 +70,7 @@ class CustomStatusItem extends StatelessWidget {
                           Expanded(
                             child: Text(
                               firstLineText,
-                              style: AppTextStyles.bodyText1.copyWith(fontWeight: FontWeight.w400,fontSize: 18),
+                              style: AppTextStyles.bodyText1.copyWith(fontWeight: FontWeight.w600,fontSize: 14),
                               overflow: TextOverflow.ellipsis,
                             ),
                           ),
@@ -86,12 +80,12 @@ class CustomStatusItem extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 4.h),
+                      SizedBox(height: 2.h),
                       Text(
                         secondLineText,
                         style: AppTextStyles.bodyText2,
                       ),
-                      SizedBox(height: 8.h),
+                      SizedBox(height: 4.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

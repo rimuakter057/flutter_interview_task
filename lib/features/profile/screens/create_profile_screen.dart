@@ -1,7 +1,9 @@
-// lib/screens/create_profile_screen.dart
+
 
 import 'package:flutter/material.dart';
+import 'package:flutter_interview_task/routes/app_routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 
 import '../../../core/constants/colors.dart';
@@ -16,23 +18,29 @@ class CreateProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
-      appBar: AppBar(
-        title: Text('My Profile', style: AppTextStyles.appBarTitle),
-        centerTitle: true,
-        backgroundColor: AppColors.background,
-        elevation: 0,
-      ),
+
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 30.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+          IconButton(onPressed: (){
+        context.pop();
+        }, icon: Icon(Icons.arrow_back_ios),),
+                  Text('My Profile', style: AppTextStyles.appBarTitle),
+                  SizedBox(),
+                ],
+              ),
+              SizedBox(height: 15.h),
               CircleAvatar(
                 radius: 40.r,
                 backgroundImage: const AssetImage('assets/images/profile.jpg'),
               ),
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               const CustomTextField(
                 label: 'Your Name',
                 hint: 'Mirable Lily',
@@ -77,10 +85,10 @@ class CreateProfileScreen extends StatelessWidget {
               CustomButton(
                 text: 'Save Changes',
                 onPressed: () {
-                  // TODO: Implement save changes logic
-                  Navigator.of(context).pop();
+                  context.pop();
                 },
               ),
+              SizedBox(height: 10.h),
             ],
           ),
         ),

@@ -36,7 +36,7 @@ class CustomProductItem extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 8.h),
         decoration: BoxDecoration(
-          color: AppColors.cardBackground,
+          color:Colors.transparent ,
           borderRadius: BorderRadius.circular(10.r),
           boxShadow: [
             BoxShadow(
@@ -55,17 +55,55 @@ class CustomProductItem extends StatelessWidget {
                 // Product Image - ছবির উচ্চতা কলামের উচ্চতার সমান হবে
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8.r),
-                  child: Image.network(
+                  child: imageUrl.isEmpty
+                      ? Container(
+                    width: 100.w,
+                    height: 100.h,
+                    color: AppColors.cardBackground,
+                    child: Center(
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                        color: AppColors.primary,
+                      ),
+                    ),
+                  )
+                      : Image.network(
                     imageUrl,
-                    width: 100.w, // ছবির প্রস্থ নির্দিষ্ট রাখা হয়েছে
-                    fit: BoxFit.contain, // উচ্চতা যত বড় হোক, ছবিটি মানিয়ে নেবে
+                    width: 100.w,
+                    height: 100.h,
+                    fit: BoxFit.contain,
+                    // ✅ লোডিং হ্যান্ডেল
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) return child;
+                      return SizedBox(
+                        width: 100.w,
+                        height: 100.h,
+                        child: Center(
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            color: AppColors.primary,
+                            value: loadingProgress.expectedTotalBytes != null
+                                ? loadingProgress.cumulativeBytesLoaded /
+                                loadingProgress.expectedTotalBytes!
+                                : null,
+                          ),
+                        ),
+                      );
+                    },
+                    // ✅ এরর হ্যান্ডেল
                     errorBuilder: (context, error, stackTrace) => Container(
                       width: 100.w,
+                      height: 100.h,
                       color: AppColors.cardBackground,
-                      child: Icon(Icons.broken_image, size: 40.sp, color: AppColors.secondaryText),
+                      child: Icon(
+                        Icons.broken_image,
+                        size: 40.sp,
+                        color: AppColors.secondaryText,
+                      ),
                     ),
                   ),
                 ),
+
                 SizedBox(width: 12.w),
                 // Product Details Column - ছবির পাশের অংশ
                 Expanded(

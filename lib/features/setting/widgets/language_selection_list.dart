@@ -1,6 +1,7 @@
 // language_selection_list.dart
 
 import 'package:flutter/material.dart';
+import 'package:flutter_interview_task/core/constants/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'language_list_item.dart'; // Make sure to import the item widget
 
@@ -38,10 +39,10 @@ class _LanguageSelectionListState extends State<LanguageSelectionList> {
           'Languages',
           style: TextStyle(
             fontSize: 14.sp,
-            color: Colors.grey,
+            color: AppColors.primaryText,
           ),
         ),
-        SizedBox(height: 5.h),
+        SizedBox(height: 8.h),
         ...widget.languages.map((language) {
           return LanguageListItem(
             languageName: language,

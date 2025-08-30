@@ -22,48 +22,45 @@ class CustomProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      child: Row(
-        children: [
-          GestureDetector(
-            onTap: () => context.go(AppRoutes.createProfile),
-            child: CircleAvatar(
-              radius: 30.r,
-              backgroundImage: AssetImage(profileImage),
+    return Row(
+      children: [
+        GestureDetector(
+          onTap: () => context.go(AppRoutes.createProfile),
+          child: CircleAvatar(
+            radius: 30.r,
+            backgroundImage: AssetImage(profileImage),
+          ),
+        ),
+        SizedBox(width: 16.w),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              name,
+              style: TextStyle(
+                fontSize: 18.sp,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          SizedBox(width: 16.w),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                name,
-                style: TextStyle(
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 4.h),
-              Row(
-                children: [
-                  Text(
-                    membershipStatus,
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      color: Colors.grey,
-                    ),
+            SizedBox(height: 4.h),
+            Row(
+              children: [
+                Text(
+                  membershipStatus,
+                  style: TextStyle(
+                    fontSize: 14.sp,
+                    color: Colors.grey,
                   ),
-                  if (statusWidget != null) ...[
-                    SizedBox(width: 8.w),
-                    statusWidget!,
-                  ],
+                ),
+                if (statusWidget != null) ...[
+                  SizedBox(width: 8.w),
+                  statusWidget!,
                 ],
-              ),
-            ],
-          ),
-        ],
-      ),
+              ],
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

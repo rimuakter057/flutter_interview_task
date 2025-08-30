@@ -108,7 +108,9 @@ class OrderStatusScreen extends ConsumerWidget {
 
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-              child: CustomProfile(profileImage: "assets/images/profile.jpg", name: "Rimu", membershipStatus: "membershipStatus")
+              child: CustomProfile(
+                  profileImage: "assets/images/profile.jpg",
+                  name: "Rimu", membershipStatus: "my orders")
             ),
 
             // লিস্টভিউ

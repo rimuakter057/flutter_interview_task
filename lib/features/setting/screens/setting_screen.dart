@@ -26,10 +26,10 @@ class _SettingScreenState extends State<SettingScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 100,),
+                  SizedBox(height: 100.h,),
                   Text("Setting",style: TextStyle(fontSize: 20.sp,color: Colors.black,fontWeight: FontWeight.bold
                   ),),
-
+                  SizedBox(height:5.h,),
                   LanguageSelectionList(
                     languages: ['English', 'Français', 'Pусский', 'Tiếng Việt'],
                     initialSelectedLanguage: _currentLanguage,

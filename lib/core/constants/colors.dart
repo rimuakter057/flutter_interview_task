@@ -25,6 +25,7 @@ class AppColors {
   static const Color background = Color(0xFFFFFFFF);
   static const Color inputFieldBackground = Color(0xFFE3F2FD);
   static const Color cardBackground = Color(0xFFF5F5F5);
+  static const Color inputBoarder = Color(0xFF2196F3);
 
   // Status & Action Colors
   static const Color success = Color(0xFF4CAF50);
