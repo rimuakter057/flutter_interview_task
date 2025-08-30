@@ -19,6 +19,7 @@
 
 ---
 
+
 ## 🛠️ Technologies Used
 
 This app is built with the following technologies:
@@ -36,5 +37,33 @@ http: ^1.5.0
 flutter_screenutil: ^5.9.3
 go_router: ^16.2.1
 flutter_riverpod: ^2.6.1
+
+## 🛠️ Structure
+lib/
+│
+├── main.dart
+├── app. dart                     # Root widget, app-wide settings
+├── routes/                      # Named route definitions
+│   └── app_routes.dart
+│
+├── core/                        # Reusable core utilities, constants,
+│   ├── constants/
+│   ├── utils/
+│   ├── services/                # Common services: network, storage, etc.
+│   └── widgets/                 # Reusable widgets (buttons, loaders, etc.)
+│
+├── business_logic/                        # Data layer (local, remote, models)
+│   ├── models/
+│   ├── repositories/
+│   └── providers/               # APIs
+│
+├── features/                    
+│   ├── order/                   
+│   │   ├── screens/
+│   │   ├── logic/
+│   │   ├── data/
+│   │   └── widgets/
+
+
 ---
 
